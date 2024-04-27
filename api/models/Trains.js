@@ -1,53 +1,56 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
-const TrainSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:true,
+const TicketCategorySchema = new mongoose.Schema({
+    type: {
+        type: String,
+        enum: ['Sleeper (SL)', 'AC 3 Economy (3E)', 'AC 3 Tier (3A)', 'AC 2 Tier (2A)', 'AC First Class(1A)'],
+        required: true
     },
-    type:{
-        type:String,
-        required:true,
+    maxCapacity: {
+        type: Number,
+        required: true
     },
-    city:{
-        type:String,
-        required:true,
+    booked: {
+        type: Number,
+        default: 0
     },
-    address:{
-        type:String,
-        required:true,
-    },
-    distance:{
-        type:String,
-        required:true,
-    },
-    photos:{
-        type:[String],
-    },
-    desc:{
-        type:String,
-        required:true,
-    },
-    rating:{
-        type:Number,
-        min:0,
-        max:5,
-    },
-    rooms:{
-        type:[String],
-    },
-    cheapestPrice:{
-        type:Number,
-        required:true,
-    },
-    featured:{
-        type:Boolean,
-        required:false,
-    },
-
-
 });
 
-export default mongoose.model("Train",TrainSchemaSchema)
+const TrainSchema = new mongoose.Schema({
+    trainNo: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    runningDates: {
+        type: [String],
+        required: true
+    },
+    startingStation: {
+        type: String,
+        required: true
+    },
+    destinationStation: {
+        type: String,
+        required: true
+    },
+    startingTime: {
+        type: String,
+        required: true
+    },
+    endingTime: {
+        type: String,
+        required: true
+    },
+    ticketCategories: {
+        type: [TicketCategorySchema],
+        required: true
+    }
+});
+
+export default mongoose.model("Train", TrainSchema);
