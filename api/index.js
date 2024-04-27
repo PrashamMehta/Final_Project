@@ -18,7 +18,7 @@ dotenv.config()
 
 
 app.use(cors({
-    origin :"http://localhost:3300",
+    origin :"http://localhost:3000",
     methods : "GET,POST,PUT,DELETE",
     credentials:true
 }));
@@ -83,7 +83,7 @@ passport.use(
         }
     })
 )
-
+ 
 passport.serializeUser((user,done)=>{
     done(null,user);
 })
@@ -106,6 +106,7 @@ app.get("/login/success",async(req,res)=>{
     console.log("Hi jdsnfasdjlnfasidjbfjasdbf",req.user)    
 
     if(req.user){
+        console.log("fadsfasfasfsadf")
         res.status(200).json({mesaage:"user Login", user:req.user})
     }
     else{

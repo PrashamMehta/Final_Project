@@ -15,6 +15,8 @@ const Navbar = () => {
         withCredentials: true,
       });
 
+      console.log(response.data.user)
+
       setUserdata(response.data.user);
     } catch (error) {}
   };

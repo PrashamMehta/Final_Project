@@ -5,7 +5,7 @@ import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
   const { data, loading } = useFetch("/hotels?featured=true");
-  console.log(data)
+  // console.log(data)
 
   const handleCLick = (id) =>{
     
