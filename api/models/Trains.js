@@ -28,7 +28,13 @@ const TrainSchema = new mongoose.Schema({
         required: true
     },
     runningDates: {
-        type: [String],
+        type: [{
+            dayOfWeek: {
+                type: String,
+                enum: ['M', 'T', 'W', 'Th', 'F', 'S', 'Su']
+            },
+            dates: [String]
+        }],
         required: true
     },
     startingStation: {

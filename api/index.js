@@ -5,6 +5,7 @@ import cors from "cors"
 import hotelRoute from "../api/routes/hotel.js"
 import authRoute from "../api/routes/auth.js"
 import userRoute from "../api/routes/user.js"
+import trainRoute from "../api/routes/train.js"
 import session from "express-session"
 import cookieParser from "cookie-parser"
 import passport from "passport"
@@ -121,6 +122,7 @@ app.use(cookieParser())
 app.use("/api/hotels",hotelRoute);
 app.use("/api/auth",authRoute);
 app.use("/api/user",userRoute);
+app.use("/api/train",trainRoute);
 
 app.use((err,req,res,next)=>{
     const errorStatus = err.status || 500
