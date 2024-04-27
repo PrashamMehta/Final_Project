@@ -1,5 +1,5 @@
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
+import Header from "../train/Header.jsx";
 import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
 import "./train_booking.css";
@@ -8,7 +8,7 @@ const Train = () => {
     return (
       <div>
         <Navbar />
-        {/* <Header/> */}
+        <Header/>
         <div className="homeContainer">
           <MailList/>
           <Footer/>
