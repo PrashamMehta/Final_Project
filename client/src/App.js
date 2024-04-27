@@ -6,12 +6,12 @@ import {
 import Home from "./pages/home/Home";
 import Hotel from "./pages/hotel/Hotel";
 import List from "./pages/list/List";
-import Login from "../src/pages/login/Login.js";
-import Register from "../src/pages/register/Register.js";
-import Flight from "../src/pages/flight/Flight_booking.js";
-import Train from "../src/pages/train/Train_booking.js";
-import Car from "../src/pages/car_rental/Car_rental.js";
-import Airport from "../src/pages/airport_taxis/Airport_taxis.js";
+import Login from "../src/pages/login/Login.jsx";
+import Register from "../src/pages/register/Register.jsx";
+import Flight from "../src/pages/flight/Flight_booking.jsx";
+import Train from "../src/pages/train/Train_booking.jsx";
+import Car from "../src/pages/car_rental/Car_rental.jsx";
+import Airport from "../src/pages/airport_taxis/Airport_taxis.jsx";
 
 function App() {
   return (
