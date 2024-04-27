@@ -8,12 +8,12 @@ const Train = () => {
     return (
       <div>
         <Navbar />
-        <Header/>
+        {/* <Header/> */}
         <div className="homeContainer">
           <MailList/>
           <Footer/>
         </div>
-      </div>
+      </div> 
     );
   };
 

@@ -5,6 +5,7 @@ import {
   faPerson,
   faPlane,
   faTaxi,
+  faTrain,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
@@ -97,7 +98,7 @@ const Header = ({ type }) => {
               <span>Car rentals</span>
             </button>
             <button className={`headerListItem ${activePage === 'Attractions' ? 'active' : ''}`} onClick={handleTrain}>
-              <FontAwesomeIcon icon={faBed} />
+              <FontAwesomeIcon icon={faTrain} />
               <span>Train Booking</span>
             </button>
             <button className={`headerListItem ${activePage === 'Airport taxis' ? 'active' : ''}`} onClick={handleAirportTaxis}>
