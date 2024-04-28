@@ -8,7 +8,7 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext} from "../../context/SearchContext.js";
-// import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext.js";
 
 const Header = ({ type }) => {
@@ -75,37 +75,17 @@ const Header = ({ type }) => {
                   <span
                     onClick={() => setOpenDate(!openDate)}
                     className="headerSearchText"
-                  >{`${format(date, "MM/dd/yyyy")}`}</span>
+                  >{`${format(date, "yyyy/mm/dd")}`}</span>
                   {openDate && (
                     <DateRange
-                      editableDateInputs={true}
+                      editableDateInputs={false}
                       onChange={(item) => setDate(item.startDate)}
-                      moveRangeOnFirstSelection={false}
-                      ranges={[{ startDate: date, endDate: date, key: 'selection' }]}
+                      moveRangeOnFirstSelection={true}
+                      ranges={[{ startDate: date, key: 'selection' }]}
                       className="date"
                       minDate={new Date()}
                     />
                   )}
-                </div>
-                <div className="headerSearchItem">
-                  <FontAwesomeIcon icon={faUserFriends} className="headerIcon" />
-                  <span className="headerSearchText">{`${passengers} passenger${passengers > 1 ? 's' : ''}`}</span>
-                  <div className="optionCounter">
-                    <button
-                      disabled={passengers <= 1}
-                      className="optionCounterButton"
-                      onClick={() => setPassengers(passengers - 1)}
-                    >
-                      -
-                    </button>
-                    <span className="optionCounterNumber">{passengers}</span>
-                    <button
-                      className="optionCounterButton"
-                      onClick={() => setPassengers(passengers + 1)}
-                    >
-                      +
-                    </button>
-                  </div>
                 </div>
                 <div className="headerSearchItem">
                   <button className="headerBtn" onClick={handleSearch}>

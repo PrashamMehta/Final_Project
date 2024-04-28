@@ -1,5 +1,5 @@
 import Footer from "../../components/footer/Footer";
-import Header from "../train/Header.jsx";
+import Header from "../train/Header";
 import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
 import "./train_booking.css";
