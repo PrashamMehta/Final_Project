@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { SearchContext} from "../../context/SearchContext.js";
 import Navbar from "../../components/navbar/Navbar";
 import { AuthContext } from "../../context/AuthContext.js";
+import Calender1, {calendar1} from "../train/calendar.jsx"
 
 const Header = ({ type }) => {
   const [sourceStation, setSourceStation] = useState("");
@@ -37,6 +38,7 @@ const Header = ({ type }) => {
   const activePage = 'Train Booking'; 
  
   return (
+    
     <div> 
       <div className="header">
         <div className="headerContainer">
@@ -69,25 +71,13 @@ const Header = ({ type }) => {
                     value={destinationStation}
                     onChange={(e) => setDestinationStation(e.target.value)}
                   />
-                </div>
-                <div className="headerSearchItem">
-                  <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-                  <span
-                    onClick={() => setOpenDate(!openDate)}
-                    className="headerSearchText"
-                  >{`${format(date, "yyyy/mm/dd")}`}</span>
-                  {openDate && (
-                    <DateRange
-                      editableDateInputs={false}
-                      onChange={(item) => setDate(item.startDate)}
-                      moveRangeOnFirstSelection={true}
-                      ranges={[{ startDate: date, key: 'selection' }]}
-                      className="date"
-                      minDate={new Date()}
-                    />
-                  )}
-                </div>
-                <div className="headerSearchItem">
+                </div> 
+
+                <div>
+                  <Calender1/>
+                </div>   
+
+              <div>            
                   <button className="headerBtn" onClick={handleSearch}>
                     Search
                   </button>

@@ -12,10 +12,17 @@ const TicketCategorySchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    booked: {
-        type: Number,
-        default: 0
-    },
+    
+    booked: [{
+        date: {
+            type: String,
+            required: true
+        },
+        count: {
+            type: Number,
+            default: 0
+        }
+    }]
 });
 
 const TrainSchema = new mongoose.Schema({
