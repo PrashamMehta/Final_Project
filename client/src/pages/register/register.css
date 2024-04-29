@@ -45,10 +45,11 @@
   @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
   .login {
-    width: 360px;
+    width: 450px;
     padding: 125px 0 0;
     margin: auto;
   }
+  
   .form {
     position: relative;
     z-index: 1;

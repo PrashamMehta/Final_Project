@@ -1,8 +1,7 @@
-import { useReducer, createContext } from "react";
+import { createContext, useReducer } from "react";
 
 const INITIAL_STATE = {
-  city1: undefined,
-  city2: undefined,
+  city: undefined,
   dates: [],
   options: {
     adult: undefined,
@@ -26,17 +25,36 @@ const SearchReducer = (state, action) => {
 
 export const SearchContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(SearchReducer, INITIAL_STATE);
-  // console.log("Hi this is dispatch console log",dispatch)
- 
-  return(<SearchContext.Provider
-    value={{
-      city1: state.city1,
-      city2: state.city2,
-      dates: state.dates,
-      options: state.options,
-      dispatch,
-    }}
-  >
-    {children}
-  </SearchContext.Provider>)
+
+  return (
+    <SearchContext.Provider
+      value={{
+        city: state.city,
+        dates: state.dates,
+        options: state.options,
+        dispatch,
+      }}
+    >
+      {children}
+    </SearchContext.Provider>
+  );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

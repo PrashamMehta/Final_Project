@@ -6,26 +6,20 @@ import {
 import Home from "./pages/home/Home";
 import Hotel from "./pages/hotel/Hotel";
 import List from "./pages/list/List";
-import Login from "../src/pages/login/Login.jsx";
-import Register from "../src/pages/register/Register.jsx";
-import Flight from "../src/pages/flight/Flight_booking.jsx";
-import Train from "../src/pages/train/Train_booking.jsx";
-import Car from "../src/pages/car_rental/Car_rental.jsx";
-import Airport from "../src/pages/airport_taxis/Airport_taxis.jsx";
+import Login from "./pages/login/Login";
+import Register from "../src/pages/register/Register"
+import Review_Booking from "../src/pages/review_booking/Review_booking"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
-        <Route path="/flight" element={<Flight/>}/>
-        <Route path="/train" element={<Train/>}/>
-        <Route path="/car_rental" element={<Car/>}/>
-        <Route path="/airport_taxis" element={<Airport/>}/>        
         <Route path="/hotels" element={<List/>}/>
         <Route path="/hotels/:id" element={<Hotel/>}/>
+        <Route path="/register" element={<Register/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/review_booking" element={<Review_Booking/>}/>
       </Routes>
     </BrowserRouter>
   );

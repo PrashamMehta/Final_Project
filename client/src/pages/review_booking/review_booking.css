@@ -1,0 +1,154 @@
+/* Styles for ReviewBooking component */
+.review-booking {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  .header {
+    background-color: #003580;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .headerList {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+  .headerListItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .headerListItem.active {
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  
+  .review-booking h2 {
+    margin-top: 0;
+  }
+  
+  .review-booking p {
+    margin: 5px 0;
+  }
+  .binformation {
+    display: inline-block;
+    width: 700px;
+    margin-left: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 10px rgba(0,0,0,.5);
+}
+
+.vertical1{
+    display: inline-block;
+}
+.verticale2{
+    display: inline-block;
+}
+
+.guestcontainer{
+    /* display: inline-block; */
+    width: 700px;
+    margin-left: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 10px rgba(0,0,0,.5);
+}
+.tccontainer{
+    /* display: inline-block; */
+    width: 700px;
+    margin-left: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 10px rgba(0,0,0,.5);
+}
+
+.paybutton{
+    width: 700px;
+    margin-left: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+}
+
+.heading1{
+    margin-left: 200px;
+}
+
+.header {
+   text-align: left;
+   padding:0px;
+}
+
+.details {
+   display:flex; 
+   justify-content:center; 
+   align-items:center; 
+   padding: 30px;
+}
+
+.bigcontainer{
+   
+}
+
+.bookingsum {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin-left: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 10px rgba(0,0,0,.5);
+}
+
+.checkin,
+.checkout {
+   /* margin-right:20px;  */
+}
+
+.stayinfo {
+   text-align:center; 
+}
+ 
+  .review-booking label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .review-booking input[type="text"],
+  .review-booking input[type="email"],
+  .review-booking input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  .review-booking button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .review-booking button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
