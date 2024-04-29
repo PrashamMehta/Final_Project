@@ -7,21 +7,57 @@ import {
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import "./review_booking.css";
-
-const ReviewBooking = ({ hotelName, checkInDate, checkOutDate, fare }) => {
+import { SearchContext } from "../../context/SearchContext";
+import { format } from "date-fns";
+import axios from "axios";
+import useFetch from "../../hooks/useFetch";
+ 
+const ReviewBooking = ({ fare }) => {
+  const location = useLocation();
+  const { hotelId, totalFare, selectedRooms } = location.state;
+  const [dates, setDates] = useState(location.state.dates);
+  const [options, setOptions] = useState(location.state.options);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
   const navigate = useNavigate();
+  const{data} = useFetch(`/hotels/find/${hotelId}`)
 
-  const handlePay = () => {
-    // Redirect to payment gateway
-    // Implement payment gateway redirection logic here
-    navigate("/payment"); // Redirecting to payment gateway route for demonstration
+  const getDatesInRange = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+
+    const date = new Date(start.getTime());
+
+    const dates = [];
+
+    while (date <= end) {
+      dates.push(new Date(date).getTime());
+      date.setDate(date.getDate() + 1);
+    }
+
+    return dates;
+  };
+
+  const alldates = getDatesInRange(dates[0].startDate, dates[0].endDate);
+
+
+  const handlePay = async() => {
+    try {
+      await Promise.all(
+        selectedRooms.map((roomId) => {
+          const res = axios.put(`/rooms/availability/${roomId}`, {
+            dates: alldates,
+          });
+          return res.data;
+        })
+      );
+      navigate("/payment"); 
+    } catch (err) {}
   };
 
   return (
@@ -62,21 +98,24 @@ const ReviewBooking = ({ hotelName, checkInDate, checkOutDate, fare }) => {
         <div className="vertical1">
           <div className="binformation">
             <div className="header1">
-              <h2>The Ashok</h2>
+              <h2>{data.name}</h2>
             </div>
-            <p>★★★★★</p>
-            <p>50-B, Diplomatic Enclave, Chanakyapuri, Delhi, India</p>
+            <p>{data.rating}★</p>
+            <p>{data.address}</p>
             <hr></hr>
             <div className="details">
               <div className="checkin">
                 <h3>CHECK IN</h3>
-                <p>Tue 30 Apr 2024</p>
+                <p>{`${format(
+                dates[0].startDate,
+                "dd/MM/yyyy"
+              )}`}</p>
                 <p>2 PM</p>
               </div>
               <span>| 1 NIGHT |</span>
               <div className="checkout">
                 <h3>CHECK OUT</h3>
-                <p>Wed 1 May 2024</p>
+                <p>{`${format(dates[0].endDate, "dd/MM/yyyy")}`}</p>
                 <p>12 PM</p>
                 <div className="stayinfo">1 Night | 2 Adults | 1 Room</div>
               </div>
@@ -122,7 +161,7 @@ const ReviewBooking = ({ hotelName, checkInDate, checkOutDate, fare }) => {
           <div className="bookingsum">
             <h2>Booking Summary</h2>
             <hr></hr>
-            <p>Total Fare: ${fare}</p>
+            <p>Total Fare: ₹{totalFare}</p>
           </div>
         </div>
 {/*--------------------------------------------------------------------------------------------*/}     

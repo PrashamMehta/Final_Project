@@ -12,9 +12,10 @@ const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
   const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
 
-  const { city,dates,options } = useContext(SearchContext);
+  
+  const { dates,options } = useContext(SearchContext);
 
-  console.log(dates,city,options)
+  
 
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
@@ -74,18 +75,7 @@ const Reserve = ({ setOpen, hotelId }) => {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    try {
-      await Promise.all(
-        selectedRooms.map((roomId) => {
-          const res = axios.put(`/rooms/availability/${roomId}`, {
-            dates: alldates,
-          });
-          return res.data;
-        })
-      );
-      setOpen(false);
-      navigate("/");
-    } catch (err) {}
+    navigate('/review_booking',{ state: { dates, options,hotelId, totalFare, selectedRooms } })
   };
   return (
     <div className="reserve">
