@@ -66,7 +66,7 @@ const Hotel = () => {
   return (
     <div>
       <Navbar />
-      <Header type="list" />
+      <Header type="list" height1="100px" />
       {loading ? (
         "loading"
       ) : (

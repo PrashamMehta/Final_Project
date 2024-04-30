@@ -19,7 +19,7 @@ import { AuthContext } from "../../context/AuthContext";
 import homeImage from "../../assets/mainbg.png";
 import video1 from "../../assets/video1.mp4";
 
-const Header = ({ type }) => {
+const Header = ({ type, height1 }) => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [dates, setDates] = useState([
@@ -39,7 +39,6 @@ const Header = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
-
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -48,7 +47,7 @@ const Header = ({ type }) => {
       };
     });
   };
- 
+
   const { dispatch } = useContext(SearchContext);
 
   const handleSearch = () => {
@@ -88,7 +87,8 @@ const Header = ({ type }) => {
             <span>Airport taxis</span>
           </div>
         </div>
-        {type !== "list" && (
+        {type !== "list" && 
+        (
           <>
             <h1 className="headerTitle">
               A lifetime of discounts? It's Genius.
