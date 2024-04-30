@@ -81,24 +81,22 @@
 }
 
 .heading1{
-    margin-left: 200px;
+    margin-left: 2rem;
 }
 
 .header {
    text-align: left;
    padding:0px;
 }
-
+/* 
 .details {
    display:flex; 
    justify-content:center; 
    align-items:center; 
    padding: 30px;
-}
+} */
 
-.bigcontainer{
-   
-}
+
 
 .bookingsum {
     display: inline-block;
@@ -152,3 +150,242 @@
     cursor: not-allowed;
   }
   
+
+.main_conatiner{
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 2rem;
+  width: 95%;
+}
+
+.main_conatiner> :nth-child(2) {
+  align-self: start;
+}
+.container{
+  display: flex;
+}
+
+.TotalFare{
+  display: flex;
+}
+
+.HotelDetails{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 5px 1px #888888;
+}
+
+.HotelTitle{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-left: 2rem;
+  margin-top: .5rem;
+}
+
+.HotelRating{
+  margin-left: 2rem;
+  margin-top: -5px;
+}
+
+.HotelSchedule{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto;
+  gap: .7rem;
+  background-color: #edeaea;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding-bottom: .5rem;
+}
+
+.CheckInAndOut{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: .5rem;
+}
+.Inn{
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+.Outt{
+  margin-left: 2rem;
+  flex-direction: column;
+  display: flex;
+}
+
+.InnTitle{
+  color: #808080;
+  font-size: 14px;
+}
+
+.OuttTitle{
+  color: #808080;
+  font-size: 14px;
+}
+
+
+.GuestsDetails{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.GuestDetails{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 5px 1px #888888;
+  margin-top: 1rem;
+}
+
+.GuestsTitle{
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-left: 2rem;
+  margin-top: .3rem;
+}
+
+.GuestsForm{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem
+}
+
+.username{
+  margin-left: 2rem;
+  display: flex;
+}
+
+.userName{
+  background-color: #edeaea;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 7px;
+  padding-left: .6rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
+
+.userName:focus{
+  outline: none;
+}
+
+.email{
+  background-color: #edeaea;
+  text-decoration: none;
+  border: 0px;
+  border-radius: 7px;
+  padding-left: .6rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
+
+.email:focus{
+  outline: none;
+}
+
+.LoginToAccess{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: #ebf5ff;
+  padding-left: 2rem;
+  color: #4a4a4a;
+  font-weight: bolder;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 10px;
+  padding-left: 2rem;
+  align-items: center;
+}
+
+.LoginButton{
+  display: flex;
+  margin-right: 2rem;
+  color: #008cff;
+  background-color: white;
+  border: 1px solid #008cff;
+  justify-content: center;
+  width: 80px;
+  outline: 0;
+  font-weight: 900;
+  font-size: 15px;
+  border-radius: 4px;
+  height: 28px;
+  align-items: center;
+}
+
+.TnC{
+  display: flex;
+  margin-top: 1rem;
+  /* margin-left: 2rem; */
+}
+
+.Pay{
+  color: white;
+  font-weight: bolder;
+  font-size: 19px;
+  background-color: #007bff;
+  border-radius: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: auto;
+  padding: 7px;
+  margin-top: 1rem;
+}
+
+.TotalFare{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 5px 1px #888888;
+  height: auto;
+}
+
+.PriceDetails{
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.PriceDetailsTitle{
+  margin-left: 2rem;
+}
+
+.basePrice{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-right: 2rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.hotelTaxes{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-right: 2rem;
+}
+
+.TotalAmount{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: #edeaea;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding-bottom: .5rem;
+  padding-left: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .HotelSchedule{
+  }
+}
