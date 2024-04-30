@@ -11,12 +11,54 @@ import React, { useContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/Navbar";
 import "./review_booking.css";
+import useFetch from "../../hooks/useFetch";
+import { format } from "date-fns";
 
-const ReviewBooking = ({ hotelName, checkInDate, checkOutDate, fare }) => {
+
+
+
+
+const ReviewBooking = ({  fare }) => {
+  const location = useLocation();
+  const { hotelId, totalFare, selectedRooms } = location.state;
+  const [dates, setDates] = useState(location.state.dates);
+  const [options, setOptions] = useState(location.state.options);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
   const navigate = useNavigate();
+
+  const {data} = useFetch(`/hotels/find/${hotelId}`);
+
+  const getDatesInRange = (startDate, endDate) => {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+
+    const date = new Date(start.getTime());
+
+    const dates = [];
+
+    while (date <= end) {
+      dates.push(new Date(date).getTime());
+      date.setDate(date.getDate() + 1);
+    }
+ 
+
+    return dates;
+  };
+
+  const totalrooms = selectedRooms.length;
+
+  const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+  function dayDifference(date1, date2) {
+    const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+    const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
+    return diffDays;
+  }
+
+  const days = dayDifference(dates[0].endDate, dates[0].startDate);
+
+  const alldates = getDatesInRange(dates[0].startDate, dates[0].endDate);
 
   const handlePay = () => {
     // Redirect to payment gateway
@@ -58,25 +100,25 @@ const ReviewBooking = ({ hotelName, checkInDate, checkOutDate, fare }) => {
           <div className="main_conatiner">
             <div className="details">
               <div className="HotelDetails">
-                <div className="HotelTitle">The ashok</div>
+                <div className="HotelTitle">{data.name}</div>
                   <div className="HotelRating">
-                    <p>★★★★★</p>
-                    <p style={{ color: '#6D6D6D', marginTop: '2px'}}>50-B, Diplomatic Enclave, Chanakyapuri, Delhi, India</p>
+                    <p>{data.rating}★</p>
+                    <p style={{ color: '#6D6D6D', marginTop: '2px'}}>{data.address}</p>
                   </div>
                   <div className="HotelSchedule">
                     <div className="CheckInAndOut">
                       <div className="Inn">
                         <div className="InnTitle">CHECK IN</div>
-                        <div className="InnDate" style={{fontSize: '15px', marginTop: '-2px'}}>Tue<span style={{ color: '#000', fontSize: '24px', fontWeight: '900'}}> 30 Apr </span>2024</div>
+                        <div className="InnDate" style={{fontSize: '15px', marginTop: '-2px'}}>Tue<span style={{ color: '#000', fontSize: '24px', fontWeight: '900'}}>{`${format(dates[0].startDate, "dd/MM/yyyy")}`}</span></div>
                         <div style={{ marginTop: '-1px',fontSize: '15px' }}>3 pm</div>
                       </div>
                       <div className="Outt">
                         <div className="OuttTitle">CHECK Out</div>
-                        <div className="InnDate" style={{fontSize: '15px', marginTop: '-2px'}}>Wed<span style={{ color: '#000', fontSize: '24px', fontWeight: '900'}}> 1 May </span>2024</div>
+                        <div className="InnDate" style={{fontSize: '15px', marginTop: '-2px'}}>Wed<span style={{ color: '#000', fontSize: '24px', fontWeight: '900'}}>{`${format(dates[0].endDate, "dd/MM/yyyy")}`}</span></div>
                         <div style={{ marginTop: '-1px', fontSize: '15px'}}>12 pm</div>
                       </div>
                     </div>
-                    <div className="GuestsDetails"><span style={{ fontWeight: '800', marginRight: '0.3rem'}}> 1 </span> Night | <span style={{ fontWeight: '800',marginLeft: '0.3rem', marginRight: '0.3rem'}}> 2 </span> Adults | <span style={{ fontWeight: '800', marginRight: '0.3rem', marginLeft: '0.3rem'}}> 1 </span> Room</div>
+                    <div className="GuestsDetails"><span style={{ fontWeight: '800', marginRight: '0.3rem'}}> {days} </span> Night | <span style={{ fontWeight: '800',marginLeft: '0.3rem', marginRight: '0.3rem'}}> 2 </span> Adults | <span style={{ fontWeight: '800', marginRight: '0.3rem', marginLeft: '0.3rem'}}> {totalrooms} </span> Room</div>
                   </div>
               </div>
               <div className="GuestDetails">
@@ -130,8 +172,8 @@ const ReviewBooking = ({ hotelName, checkInDate, checkOutDate, fare }) => {
                 <div className="PriceDetailsTitle">
                   <div className="wrapper">
                     <div className="basePrice">
-                      <span style={{ color: '#000', fontWeight: '650', fontSize: '17px',paddingBottom: '14px'}}>1 Room x 1 Night</span>
-                      <span style={{ color: '#4a4a4a', fontWeight: '650', fontSize: '17px'}}>₹ 7,498</span>
+                      <span style={{ color: '#000', fontWeight: '650', fontSize: '17px',paddingBottom: '14px'}}>{totalrooms} Rooms x {days} Night</span>
+                      <span style={{ color: '#4a4a4a', fontWeight: '650', fontSize: '17px'}}>₹ {totalFare}</span>
                     </div>
                     <div className="hotelTaxes">
                       <span style={{ color: '#000', fontWeight: '650', fontSize: '17px',paddingBottom: '14px'}}>Hotel Taxes</span>
@@ -143,7 +185,7 @@ const ReviewBooking = ({ hotelName, checkInDate, checkOutDate, fare }) => {
               <div className="TotalAmount">
                 <div className="hotelTaxes">
                   <span style={{ color: '#000', fontWeight: '650', fontSize: '17px',paddingBottom: '14px'}}>Total Amount to be paid</span>
-                  <span style={{ color: '#4a4a4a', fontWeight: '650', fontSize: '17px'}}>₹ 8,398</span>
+                  <span style={{ color: '#4a4a4a', fontWeight: '650', fontSize: '17px'}}>₹ {totalFare+900}</span>
                 </div>
               </div>
 
