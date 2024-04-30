@@ -1,0 +1,2312 @@
+@charset "utf-8";
+
+
+a {
+  color: var(--color-primary, #008cff);
+  text-decoration: none;
+  cursor: pointer;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.makeRelative {
+  position: relative;
+}
+.makeAbsolute {
+  position: absolute;
+}
+
+.clearFix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.truncate {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.lineThrough {
+  text-decoration: line-through;
+}
+.capText {
+  text-transform: uppercase;
+}
+
+.primaryText {
+  color: #008cff;
+}
+
+._MyBiz .primaryText,
+.modalLogin.myBiz .primaryText {
+  color: #f17531;
+}
+
+/*loader changes*/
+.btnLoader {
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+  animation: rotate 0.8s infinite linear;
+  border: 2px solid #fff;
+  border-right-color: transparent;
+  border-radius: 50%;
+  margin: -2px auto;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -- In case you need to add a gutter above/below an element -- */
+.appendBottom2 {
+  margin-bottom: 2px;
+}
+.appendBottom5 {
+  margin-bottom: 5px;
+}
+.appendBottom6 {
+  margin-bottom: 6px;
+}
+.appendBottom10 {
+  margin-bottom: 10px;
+}
+.appendBottom12 {
+  margin-bottom: 12px;
+}
+.appendBottom15 {
+  margin-bottom: 15px;
+}
+.appendBottom20 {
+  margin-bottom: 20px;
+}
+.appendBottom25 {
+  margin-bottom: 25px;
+}
+.appendBottom30 {
+  margin-bottom: 30px;
+}
+.appendBottom40 {
+  margin-bottom: 40px;
+}
+.appendBottom50 {
+  margin-bottom: 50px;
+}
+
+.appendBottom52 {
+  margin-bottom: 52px;
+}
+html[dir='ltr'] .appendLeft2 {
+  margin-left: 2px;
+}
+html[dir='ltr'] .appendLeft5 {
+  margin-left: 5px;
+}
+
+html[dir='ltr'] .appendLeft8 {
+  margin-left: 8px;
+}
+html[dir='ltr'] .appendLeft10 {
+  margin-left: 10px;
+}
+html[dir='ltr'] .appendLeft20 {
+  margin-left: 20px;
+}
+html[dir='ltr'] .appendLeft40 {
+  margin-left: 40px;
+}
+html[dir='ltr'] .appendLeft50 {
+  margin-left: 50px;
+}
+
+html[dir='ltr'] .appendRight5 {
+  margin-right: 5px;
+}
+html[dir='ltr'] .appendRight8 {
+  margin-right: 8px;
+}
+html[dir='ltr'] .appendRight10 {
+  margin-right: 10px;
+}
+html[dir='ltr'] .appendRight15 {
+  margin-right: 15px;
+}
+html[dir='ltr'] .appendRight20 {
+  margin-right: 20px;
+}
+html[dir='ltr'] .appendRight25 {
+  margin-right: 25px;
+}
+html[dir='ltr'] .appendRight30 {
+  margin-right: 30px;
+}
+
+.appendTop3 {
+  margin-top: 3px;
+}
+.appendTop5 {
+  margin-top: 5px;
+}
+.appendTop10 {
+  margin-top: 10px !important;
+}
+.appendTop15 {
+  margin-top: 15px;
+}
+.appendTop20 {
+  margin-top: 20px;
+}
+.appendTop25 {
+  margin-top: 25px;
+}
+.appendTop30 {
+  margin-top: 30px;
+}
+.appendTop60 {
+  margin-top: 60px;
+}
+.appendTop250 {
+  margin-top: 250px;
+}
+.appendTop-50 {
+  margin-top: -50px;
+}
+.appendTop23 {
+  margin-top: 23px;
+}
+
+.padding1 {
+  padding: 1px;
+}
+.padding20 {
+  padding: 20px;
+}
+.paddingB10 {
+  padding-bottom: 10px;
+}
+/* -- In case you need to add a gutter Left - Right the element -- */
+html[dir='ltr'] .paddingL10 {
+  padding-left: 10px;
+}
+html[dir='ltr'] .paddingL20 {
+  padding-left: 20px;
+}
+html[dir='ltr'] .paddingR10 {
+  padding-right: 10px;
+}
+.paddingLR20 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Icon via css */
+i::before,
+i::after {
+  content: '';
+  box-sizing: border-box;
+}
+
+/* -- In case you need to add a size -- */
+.font8 {
+  font-size: 8px;
+  line-height: 8px;
+}
+.font9 {
+  font-size: 9px;
+  line-height: 9px;
+}
+.font10 {
+  font-size: 10px;
+  line-height: 10px;
+}
+.font11 {
+  font-size: calc(var(--font-scale, 1) * 11px);
+  line-height: 11px;
+}
+.font12 {
+  font-size: calc(var(--font-scale, 1) * 12px);
+  line-height: 12px;
+}
+.font14 {
+  font-size: calc(var(--font-scale, 1) * 14px);
+  line-height: 14px;
+}
+.font16 {
+  font-size: calc(var(--font-scale, 1) * 16px);
+  line-height: 16px;
+}
+.font18 {
+  font-size: calc(var(--font-scale, 1) * 18px);
+  line-height: 18px;
+}
+.font20 {
+  font-size: calc(var(--font-scale, 1) * 20px);
+  line-height: 20px;
+}
+.font22 {
+  font-size: calc(var(--font-scale, 1) * 22px);
+  line-height: 22px;
+}
+.font23 {
+  font-size: calc(var(--font-scale, 1) * 23px);
+  line-height: 23px;
+}
+.font24 {
+  font-size: calc(var(--font-scale, 1) * 24px);
+  line-height: 24px;
+}
+.font26 {
+  font-size: calc(var(--font-scale, 1) * 26px);
+  line-height: 26px;
+}
+.font28 {
+  font-size: calc(var(--font-scale, 1) * 28px);
+  line-height: 28px;
+}
+.font30 {
+  font-size: calc(var(--font-scale, 1) * 30px);
+  line-height: 30px;
+}
+
+.lineHeight14 {
+  line-height: 14px;
+}
+.lineHeight16 {
+  line-height: 16px;
+}
+.lineHeight26 {
+  line-height: 26px !important;
+}
+
+/* -- In case you need to add a Font Family -- */
+.latoLight {
+  font-weight: 300;
+}
+.latoRegular {
+  font-weight: 400;
+}
+.latoBlack {
+  font-weight: 900;
+}
+.latoBold {
+  font-weight: 700;
+}
+.latoIlalic {
+  font-style: italic;
+}
+
+/* -- Calc Width -- */
+.calc60 {
+  width: -webkit-calc(100% - 60px);
+  width: expression(100% - 60px);
+  width: -moz-calc(100% - 60px);
+  width: -o-calc(100% - 60px);
+  width: calc(100% - 60px);
+}
+.calc80 {
+  width: -webkit-calc(100% - 80px);
+  width: expression(100% - 80px);
+  width: -moz-calc(100% - 80px);
+  width: -o-calc(100% - 80px);
+  width: calc(100% - 80px);
+}
+
+/*-- Text Colors --*/
+.whiteText {
+  color: #ffffff;
+}
+.blackText {
+  color: #000000;
+}
+.darkGreyText {
+  color: #4a4a4a;
+}
+.lightGreyText {
+  color: #9b9b9b;
+}
+.deepskyBlueText {
+  color: var(--color-primary, #008cff);
+}
+.greenText {
+  color: #00a19c;
+}
+.redText {
+  color: #eb2026;
+}
+.yellowText {
+  color: #f09819;
+}
+.orangeText {
+  color: #ff664b;
+}
+.blueText {
+  color: var(--color-primary, #008cff);
+}
+.myBizText {
+  color: #ff5a5a;
+}
+
+/* -- In case you need to add an alignment -- */
+html[dir='ltr'] .textLeft {
+  text-align: left;
+}
+html[dir='ltr'] .textRight {
+  text-align: right;
+}
+.textCenter {
+  text-align: center;
+}
+html[dir='rtl'] input[type='text'].inputTextAlignLeft {
+  text-align: left;
+}
+html[dir='ltr'] .pushRight {
+  margin-left: auto;
+}
+.pushBottom {
+  margin-top: auto;
+}
+
+/* -- In case you need to add a Flex -- */
+.makeFlex {
+  display: flex;
+}
+.flexOne {
+  flex: 1;
+}
+.flexTwo {
+  flex: 2;
+}
+.makeFlex.column {
+  flex-direction: column;
+}
+.makeFlex.row {
+  flex-direction: row;
+}
+.makeFlex.perfectCenter {
+  align-items: center;
+  justify-content: center;
+}
+.makeFlex.hrtlCenter {
+  align-items: center;
+}
+.makeFlex.vrtlCenter {
+  justify-content: center;
+}
+.makeFlex.spaceBetween {
+  justify-content: space-between;
+}
+.makeFlex.spaceAround {
+  justify-content: space-around;
+}
+.makeFlex.end {
+  align-items: flex-end;
+}
+.makeFlex.top {
+  align-items: flex-start;
+}
+.makeFlex.bottom {
+  align-items: flex-end;
+}
+.makeFlex.wrap {
+  flex-wrap: wrap;
+}
+
+/* -- In case you need to change cursor type -- */
+.cursorPointer {
+  cursor: pointer;
+}
+
+/* -- In case you need to hide element -- */
+.hide {
+  display: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*--- Buttons --*/
+.primaryBtn {
+  border-radius: 34px;
+  background-image: var(--color-btn-primary-bg, linear-gradient(93deg, #53b2fe, #065af3));
+  box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  flex-shrink: 0;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  text-align: center;
+}
+a.primaryBtn {
+  color: #fff;
+}
+.primaryBtn.btnSmall {
+  font-size: 10px;
+  padding: 7px 15px;
+}
+
+/*-- Radio Box --*/
+.radioOuter {
+  display: inline-flex;
+  position: relative;
+}
+html[dir='ltr'] .radioOuter [type='radio']:checked,
+html[dir='ltr'] .radioOuter [type='radio']:not(:checked) {
+  position: absolute;
+  left: -9999px;
+  right: unset;
+}
+html[dir='ltr'] .radioOuter [type='radio']:checked + label,
+.radioOuter [type='radio']:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-flex;
+}
+
+html[dir='ltr'] .radioOuter [type='radio']:checked + label:before,
+html[dir='ltr'] .radioOuter [type='radio']:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #9b9b9b;
+  border-radius: 100%;
+  background: #fff;
+}
+
+.radioOuter [type='radio']:checked + label:before {
+  border: 1px solid var(--color-primary, #008cff);
+}
+
+html[dir='ltr'] .radioOuter [type='radio']:checked + label:after,
+html[dir='ltr'] .radioOuter [type='radio']:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary, #008cff);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.radioOuter [type='radio']:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.radioOuter [type='radio']:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/*-- Radio Box Checkbox Style --*/
+.chkBox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #9b9b9b;
+  border-radius: 2px;
+  background: #fff;
+  position: relative;
+}
+html[dir='ltr'] .selected .chkBox:before {
+  border: 1px solid var(--color-primary, #008cff);
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: var(--color-primary, #008cff);
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+html[dir='ltr'] .selected .chkBox:after {
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  content: '';
+  display: block;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/*-- icons --*/
+html[dir='ltr'] .ic_circularclose_grey:before,
+html[dir='ltr'] .ic_circularclose_grey:after {
+  position: absolute;
+  left: 9px;
+  top: 4px;
+  content: ' ';
+  height: 10px;
+  width: 1px;
+  background-color: #fff;
+}
+.ic_circularclose_grey:before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.ic_circularclose_grey:after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/*-- Right to Left --*/
+html[dir='rtl'] .textLeft {
+  text-align: right;
+}
+html[dir='rtl'] .textRight {
+  text-align: left;
+}
+.textCenter {
+  text-align: center;
+}
+html[dir='rtl'] .pushRight {
+  margin-right: auto;
+}
+
+html[dir='rtl'] .appendLeft2 {
+  margin-right: 2px;
+}
+html[dir='rtl'] .appendLeft5 {
+  margin-right: 5px;
+}
+
+html[dir='rtl'] .appendLeft8 {
+  margin-right: 8px;
+}
+
+html[dir='rtl'] .appendLeft10 {
+  margin-right: 10px;
+}
+html[dir='rtl'] .appendLeft20 {
+  margin-right: 20px;
+}
+
+html[dir='rtl'] .appendRight5 {
+  margin-left: 5px;
+}
+html[dir='rtl'] .appendRight8 {
+  margin-left: 8px;
+}
+html[dir='rtl'] .appendRight10 {
+  margin-left: 10px;
+}
+html[dir='rtl'] .appendRight15 {
+  margin-left: 15px;
+}
+html[dir='rtl'] .appendRight20 {
+  margin-left: 20px;
+}
+html[dir='rtl'] .appendRight25 {
+  margin-left: 25px;
+}
+html[dir='rtl'] .appendRight30 {
+  margin-left: 30px;
+}
+
+html[dir='rtl'] .paddingL10 {
+  padding-right: 10px;
+}
+html[dir='rtl'] .paddingL20 {
+  padding-right: 20px;
+}
+html[dir='rtl'] .paddingR10 {
+  padding-left: 10px;
+}
+
+.password-autocomplete-disabler {
+  position: absolute !important;
+  left: -10000px !important;
+  top: -10000px !important;
+}
+
+html[dir='rtl'] input[type='text'] {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Right to Left Radio Box */
+
+html[dir='rtl'] .radioOuter [type='radio']:checked,
+html[dir='rtl'] .radioOuter [type='radio']:not(:checked) {
+  position: absolute;
+  right: -9999px;
+  left: unset;
+}
+html[dir='rtl'] .radioOuter [type='radio']:checked + label,
+html[dir='rtl'] .radioOuter [type='radio']:not(:checked) + label {
+  position: relative;
+  padding-right: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-flex;
+}
+
+html[dir='rtl'] .radioOuter [type='radio']:checked + label:before,
+html[dir='rtl'] .radioOuter [type='radio']:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #9b9b9b;
+  border-radius: 100%;
+  background: #fff;
+}
+
+html[dir='rtl'] .radioOuter [type='radio']:checked + label:after,
+html[dir='rtl'] .radioOuter [type='radio']:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: var(--color-primary, #008cff);
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+html[dir='rtl'] .selected .chkBox:before {
+  border: 1px solid var(--color-primary, #008cff);
+  content: '';
+  width: 18px;
+  height: 18px;
+  background: var(--color-primary, #008cff);
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  border-radius: 2px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+html[dir='rtl'] .selected .chkBox:after {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  content: '';
+  display: block;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+/*-- icons right to left --*/
+html[dir='rtl'] .ic_circularclose_grey {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background-color: #9b9b9b;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+html[dir='rtl'] .ic_circularclose_grey:before,
+html[dir='rtl'] .ic_circularclose_grey:after {
+  position: absolute;
+  right: 9px;
+  top: 4px;
+  content: ' ';
+  height: 10px;
+  width: 1px;
+  background-color: #fff;
+}
+
+.flightBody {
+    position: relative;
+    padding-top: 20px
+}
+
+.bgGradient {
+    background-image: linear-gradient(0deg,#15457b,#051423);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 160px
+}
+
+.listingRhs {
+    width: 880px
+}
+
+.listingCardWrap {
+    border-top: 1px solid #eaeaea;
+    padding-bottom: 1px
+}
+
+.listingCard {
+    padding: 10px 14px;
+    border-top: 8px solid #e5eef5;
+    background: #fff;
+    border-radius: 2px;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(138, 107, 118, 0.08);
+    border: solid 0.7px #bababa;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.arln-logo,.multiairline {
+    width: 32px;
+    height: 32px;
+    display: block;
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-shrink: 0
+}
+
+.multiairline {
+    position: relative
+}
+
+.multiairline .arln-logo {
+    width: 16px;
+    height: 16px;
+    position: absolute
+}
+
+.multiairline .logo1 {
+    left: 0;
+    top: 0
+}
+
+.multiairline .logo2 {
+    bottom: 0;
+    right: 0
+}
+
+.multiairline .logo3 {
+    right: 0;
+    top: 0
+}
+
+.multiairline .logo4 {
+    left: 0;
+    bottom: 0
+}
+
+.airlineName {
+    width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.airways-info-sect {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 10px;
+    width: calc(100% - 50px)
+}
+
+.airways-info-sect .airlineName {
+    margin-left: 0
+}
+
+.fli-code {
+    width: 100px
+}
+
+.fli-code,.fliCode {
+    color: #878787;
+    font-size: calc(var(--font-scale, 1)*11px)
+}
+
+.ViewFareBtn {
+    border: 1px solid #008cff;
+    border-radius: 96px;
+    color: #008cff;
+    background: #daebff;
+    font-weight: 700;
+    font-size: calc(var(--font-scale, 1)*13px);
+    position: relative;
+    padding: 0 8px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 120px
+}
+
+.isTamil .ViewFareBtn,html[lang=ta] .ViewFareBtn {
+    line-height: 1.2;
+    height: 36px
+}
+
+.isTamil .ViewFareBtn .arrowDown,.isTamil .ViewFareBtn .arrowUp,html[lang=ta] .ViewFareBtn .arrowDown,html[lang=ta] .ViewFareBtn .arrowUp {
+    right: 5px
+}
+
+.splitVw {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 120px
+}
+
+.splitVw .arln-logo {
+    width: 25px;
+    height: 25px
+}
+
+.splitVw .flightsLayoverInfo {
+    width: 80px;
+    margin: 0 auto
+}
+
+.paneView {
+    background-color: #fff;
+    width: 435px;
+    border-radius: 2px;
+    align-self: flex-start;
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1)
+}
+
+.splitVw .listingCard {
+    width: 100%;
+    margin-bottom: 0;
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff
+}
+
+.disableCard {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: .5;
+    border: none
+}
+
+.splitVw .customRadioBtn .outer {
+    height: 24px;
+    width: 24px;
+    border: 2px solid #9b9b9b
+}
+
+.splitVw .customRadioBtn .inner {
+    height: 16px;
+    width: 16px
+}
+
+.splitVw .depArrWrap {
+    margin-left: 0;
+    margin-right: 40px;
+    width: 270px
+}
+
+.splitVw .multiairline .arln-logo {
+    width: 14px;
+    height: 14px
+}
+
+.splitViewListing {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    cursor: pointer
+}
+
+.splitViewListing.checked .listingCard,.splitViewListing input:checked~.listingCard {
+    background-image: linear-gradient(180deg,#f9fcff,#f9fcff);
+    border: 1px solid rgba(0,140,255,.6);
+    border-radius: 2px
+}
+
+.splitViewListing.checked {
+    border-top: 8px solid #e5eef5
+}
+
+.myBiz .splitViewListing.checked {
+    border-top: none
+}
+
+.smartValueFares {
+    padding: 8px;
+    border-radius: 2px;
+    background-image: linear-gradient(293deg,#37bcab,#219393)
+}
+
+.listingTag {
+    position: absolute;
+    left: 10px;
+    top: -8px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 9px;
+    border-radius: 21px
+}
+
+.smartValueFares .listingCard {
+    padding: 20px 12px 10px
+}
+
+.priceSection {
+    position: relative;
+    top: 10px
+}
+
+.airlineListingInfo {
+    position: relative;
+    top: 7px
+}
+
+.airlineListingInfo.rt .airlineName {
+    width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.flexiFltsGrp {
+    padding: 8px;
+    border-radius: 2px;
+    background-image: linear-gradient(114deg,#008ade,#0052ba)
+}
+
+.flexiFltsGrp .loyaltyv2-tag {
+    margin-top: 10px
+}
+
+.flexibleTag {
+    padding: 1px 5px;
+    border-radius: 0 0 4px 4px;
+    background-image: linear-gradient(80deg,#31cd94,#219393);
+    color: #fff;
+    position: absolute;
+    top: 0;
+    font-size: calc(var(--font-scale, 1)*12px);
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.flexiFltsGrp .listingCard {
+    padding: 16px 10px;
+    margin-bottom: 10px
+}
+
+.flexiFltsGrp .listingTag {
+    left: auto;
+    right: 10px
+}
+
+.ViewMoreOptions {
+    text-align: right;
+    color: #fff;
+    padding: 3px 0 0
+}
+
+.ViewMoreOptions .customArrow {
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    margin-left: 5px
+}
+
+.alertMsg {
+    background-color: #ffd3d4;
+    color: #000;
+    font-size: calc(var(--font-scale, 1)*12px);
+    text-align: center;
+    padding: 3px 15px
+}
+
+.alertMsg:before {
+    content: "";
+    height: 8px;
+    width: 8px;
+    margin-right: 5px;
+    background: #f46c77;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 3px
+}
+
+.slashedPrice {
+    color: #6d7278;
+    font-size: calc(var(--font-scale, 1)*12px);
+    font-weight: 400;
+    margin-right: 3px
+}
+
+.customArrow.fli-footer-chevron {
+    border: solid #249995;
+    border-width: 0 2px 2px 0;
+    padding: 2px;
+    margin-left: 2px
+}
+
+.ad-tech-middle-unit:not(.withOutSpace) {
+    padding: 20px;
+    border-top: 8px solid #e5eef5;
+    border-bottom: 1px solid #eaeaea
+}
+
+.reviewShareBottomSticky {
+    position: sticky;
+    bottom: 0;
+    z-index: 15;
+    height: 68px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,.2),0 0 6px 0 rgba(0,0,0,.14);
+    background-color: hsla(0,0%,98%,.97);
+    display: flex;
+    align-items: center
+}
+
+.reviewAndShareCheck:before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 16px;
+    border: solid #ff664b;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin-right: 21px;
+    margin-top: 11px
+}
+
+.reviewShareBottomSticky .reviewShareHead {
+    font-family: Lato;
+    font-size: calc(var(--font-scale, 1)*22px);
+    font-weight: 900;
+    color: #461e3a;
+    margin-top: 10px
+}
+
+.shortListList {
+    display: flex;
+    margin-right: 50px
+}
+
+.shortListList>li {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    border-radius: 2px;
+    background-color: #f5f5f5;
+    padding: 0 14px;
+    margin-left: 10px
+}
+
+.flightMbizIcon {
+    width: 20px;
+    height: 13px;
+    display: inline-block
+}
+
+.hotelMbizIcon {
+    width: 26px;
+    height: 26px;
+    display: inline-block
+}
+
+.mybizShortlist {
+    width: 15%!important;
+    border-radius: 0 10px 0 6px;
+    margin-left: 4px
+}
+
+.myBiz .tooltipStyle {
+    margin-top: -5px
+}
+
+.tagDisabled.checkbox-group .box {
+    background-color: #e0e0e0!important;
+    border: none!important
+}
+
+.tagDisabled .linkText {
+    color: #c2c2c2!important
+}
+
+.shortlistedTextStyle {
+    margin-top: 2px
+}
+
+.shortlistedTextStyle p {
+    font-weight: 400!important
+}
+
+.shortlistedTextStyle .linkText {
+    color: var(--myBizText)
+}
+
+.shortlisted .fli-list-footer-section {
+    background-color: #f4faff
+}
+
+.rvw-sctn .loginBanner {
+    padding: 15px 10px
+}
+
+#splitViewFooter {
+    position: fixed;
+    width: 900px;
+    bottom: -2px;
+    z-index: 111;
+    margin-bottom: 10px
+}
+
+#splitViewFooter .nav-tabs {
+    border: none;
+    margin-left: 25px
+}
+
+#splitViewFooter .tab-style {
+    height: 34px;
+    width: 130px;
+    text-align: center;
+    border: 1px solid rgba(88,88,88,.97);
+    margin-right: 6px
+}
+
+#splitViewFooter .splitviewSticky {
+    position: relative;
+    left: 0!important
+}
+
+#splitViewFooter .nav-tabs>li {
+    border-radius: 4px;
+    padding-top: 4px;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.2);
+    background-color: #371f30;
+    margin-bottom: -2px
+}
+
+#splitViewFooter .nav-tabs>li a {
+    color: #fff;
+    background-color: #371f30;
+    margin-right: 0!important
+}
+
+#splitViewFooter .nav-tabs>li a:hover {
+    background-color: #371f30;
+    margin-right: 2px
+}
+
+#splitViewFooter .nav-tabs>li.active a {
+    background-color: #371f30;
+    color: #f17531;
+    font-weight: 700;
+    margin-right: 0
+}
+
+.shareFlight {
+    background-color: #371f30!important;
+    padding: 20px;
+    border-radius: 7px;
+    color: #fff;
+    margin-left: -10px
+}
+
+#splitViewFooter .shortListList>li {
+    background-color: hsla(0,0%,100%,.1)
+}
+
+#splitViewFooter .shortListList>li span {
+    color: #fff
+}
+
+.myBizCheckbox {
+    width: 100%;
+    position: relative
+}
+
+.hide {
+    display: none!important;
+    visibility: hidden!important
+}
+
+.myBiz .bgGradient {
+    background-image: linear-gradient(0deg,var(--myBizTheme),var(--myBizTheme))
+}
+
+.myBiz .splitviewSticky {
+    background-color: #371f30
+}
+
+.myBiz .ViewFareBtn {
+    background-color: #fff1e7;
+    border-color: var(--myBizText);
+    color: var(--myBizText)!important
+}
+
+.myBiz .ViewFareBtn:before {
+    border-top-color: var(--myBizText)
+}
+
+.myBiz .ViewFareBtn:after {
+    border-top-color: #fff1e7
+}
+
+.myBiz .ViewFareBtn.active:before {
+    border-top-color: transparent;
+    border-bottom-color: var(--myBizText)
+}
+
+.myBiz .ViewFareBtn.active:after {
+    border-top-color: transparent;
+    border-bottom-color: #fff1e7
+}
+
+.myBiz .buttonPrimary {
+    border-radius: 34px;
+    background-image: linear-gradient(256deg,#ff684a,#ff4959)
+}
+
+.myBiz input[type=checkbox]:checked~label .box {
+    background-color: #f17531
+}
+
+.info-icon {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    width: 16px!important;
+    height: 16px!important
+}
+
+.icon-info-white,.info-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: -10px;
+    margin-left: 5px;
+    cursor: pointer
+}
+
+.icon-info-white {
+    background-position: -347px -165px;
+    width: 16px;
+    height: 16px
+}
+
+.info-icon:hover~.tag-info {
+    display: inline-block
+}
+
+.myBiz .listingCard {
+    padding-top: 22px;
+    border-top: 8px solid #f5e0e0
+}
+
+.cardTag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 9px;
+    border-radius: 21px
+}
+
+.cardTag .tag-info {
+    right: -130px
+}
+
+.myBiz .listingTag {
+    top: 4px;
+    left: auto;
+    right: 23px;
+    display: flex;
+    align-items: center
+}
+
+.tooltip-style {
+    background-color: #fff
+}
+
+.tooltip-style font {
+    color: #000!important
+}
+
+.tooltip-arrow .arrow:after,.tooltip-arrow .arrow:before {
+    background-color: transparent!important
+}
+
+.tooltip-position {
+    left: 11%!important
+}
+
+.myBiz .cardTag {
+    top: 54px;
+    display: flex;
+    align-items: center
+}
+
+.fli-tags-pos.right .tag-info,.splitVw-listing .uspsDom-tag .tag-info {
+    right: -10px
+}
+
+.fli-overlay-white.placement-top:before {
+    bottom: -21px;
+    top: auto;
+    border-color: #ccc transparent transparent
+}
+
+.fli-overlay-white.placement-top:after {
+    bottom: -20px;
+    top: auto;
+    border-color: #fff transparent transparent
+}
+
+.fli-overlay-white.placement-top {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 10px
+}
+
+.myBiz .tag-info {
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 3px #888;
+    opacity: 1
+}
+
+.myBiz .tag-info font {
+    color: #000
+}
+
+.tag-info {
+    width: 215px;
+    padding: 8px 11px;
+    top: -75px;
+    right: -158px;
+    left: auto;
+    display: none;
+    text-transform: none
+}
+
+.fli-overlay-white {
+    color: #4a4a4a;
+    background: #fff;
+    font-weight: 400;
+    position: absolute!important;
+    font-size: calc(var(--font-scale, 1)*12px);
+    line-height: 18px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    z-index: 1
+}
+
+.fli-overlay-white:before {
+    top: -21px;
+    border: 10px solid transparent;
+    border-bottom-color: #ccc
+}
+
+.fli-overlay-white:after,.fli-overlay-white:before {
+    left: 36px;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none
+}
+
+.fli-overlay-white:after {
+    top: -20px;
+    border: 10px solid transparent;
+    border-bottom-color: #fff
+}
+
+.myBiz .splitViewListing.checked .listingCard,.myBiz .splitViewListing input:checked~.listingCard {
+    background-image: linear-gradient(180deg,#fef8f4,#fef8f4);
+    border: none
+}
+
+.coachmark {
+    overflow: hidden
+}
+
+.slHighlight .bannersContainer+div.fli-list .mybizShortlist,.slHighlight .fli-list:first-of-type .mybizShortlist {
+    z-index: 3;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    pointer-events: none;
+    position: absolute;
+    padding: 5px
+}
+
+.coachMarkMybiz {
+    position: fixed;
+    background: rgba(0,0,0,.85);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3
+}
+
+.coachmarkStep1 {
+    width: 300px;
+    color: #fff;
+    position: fixed;
+    top: 370px;
+    left: 48%
+}
+
+.coachmarkStep1 .coachmarkArrow {
+    width: 47px;
+    height: 58px;
+    position: absolute;
+    left: -70px;
+    top: 30px
+}
+
+.shortListFlight {
+    width: 152px;
+    height: 90px
+}
+
+.coachmarkStep2 {
+    width: 300px;
+    color: #fff;
+    position: fixed;
+    bottom: 120px;
+    right: 17%
+}
+
+.coachmarkStep2 .coachmarkArrow {
+    width: 47px;
+    height: 58px;
+    position: absolute;
+    right: 10px;
+    bottom: -40px;
+    transform: rotate(-155deg)
+}
+
+.coachmarkReview {
+    width: 120px;
+    height: 90px
+}
+
+.splitVw .coachmarkStep1 {
+    top: auto;
+    bottom: 205px;
+    left: 31%
+}
+
+.splitVw .coachmarkStep1 .coachmarkArrow {
+    width: 47px;
+    height: 88px;
+    position: absolute;
+    left: 40px;
+    bottom: -69px;
+    top: auto;
+    transform: rotate(-155deg)
+}
+
+.splitVw .coachmarkStep2 {
+    bottom: 205px;
+    right: 44%
+}
+
+.splitVw .coachmarkStep2 .coachmarkArrow {
+    width: 47px;
+    height: 88px;
+    position: absolute;
+    right: 200px;
+    bottom: -69px;
+    transform: rotate(-155deg)
+}
+
+.splitVw .mybizShortlist {
+    width: 30%!important;
+    z-index: inherit;
+    margin-left: 0
+}
+
+.coachmarkStyle {
+    margin-top: -176px
+}
+
+.myBiz .fli_primary_btn {
+    color: #fff;
+    background-image: linear-gradient(265deg,#f85a6e,#f27337)!important
+}
+
+.myBiz .fli_primary_btn.disable,.myBiz .greyTxt.disable {
+    pointer-events: auto;
+    cursor: not-allowed
+}
+
+.fixTopBanner {
+    height: 80px
+}
+
+.myBiz .priceSection {
+    top: 10px
+}
+
+.myPartnerRateCssOverride {
+    margin-bottom: 0
+}
+
+.hideFare .myPartnerRateCssOverride {
+    visibility: hidden;
+    height: 24px
+}
+
+.hideFare .myPartnrButton {
+    padding: 0 19px
+}
+
+.whatsAppMetaDataContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1
+}
+
+.myPartnerWhatsAppShareSingleFare {
+    height: 40px;
+    padding: 0 20px;
+    align-items: center;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: -16px;
+    background-color: #fafafa
+}
+
+.append_bottom4 {
+    margin-bottom: 4px
+}
+
+.grpBkgSelectBtn {
+    border: 1px solid #008cff;
+    border-radius: 34px;
+    color: #008cff;
+    font-size: calc(var(--font-scale, 1)*14px);
+    height: 34px;
+    line-height: 32px;
+    outline: none;
+    background: #daebff;
+    padding: 0 20px!important;
+    text-align: center;
+    font-weight: 700;
+    position: relative;
+    width: 122px
+}
+
+.grpBkgSelectBtn.disabled {
+    opacity: .5;
+    cursor: not-allowed
+}
+
+.text-red {
+    color: #eb2026
+}
+
+.prepend_top5 {
+    margin-top: 5px
+}
+
+.OverlayWrapper {
+    z-index: 999;
+    background: rgba(0,0,0,.3)
+}
+
+.OverlayGreyBg,.OverlayWrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0
+}
+
+.OverlayGreyBg {
+    background: rgba(0,0,0,.6);
+    z-index: 10
+}
+
+.OverlayContent {
+    border-radius: 10px;
+    background: #fff;
+    position: fixed;
+    transform: translateX(-50%);
+    z-index: 20
+}
+
+.snackBar-content {
+    padding: 20px 30px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    color: #4a4a4a;
+    transform: translate(-50%,-50%)
+}
+
+.zc-close {
+    background-position: -165px -281px;
+    width: 14px;
+    height: 12px;
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer
+}
+
+.blackTxt {
+    color: #000
+}
+
+.snackBar-content .overlayDesc {
+    max-height: 180px;
+    overflow-y: auto;
+    font-size: calc(var(--font-scale, 1)*16px);
+    line-height: 20px;
+    padding: 0 10px 0 0
+}
+
+.marR10 {
+    margin-right: 10px
+}
+
+.append_bottom15 {
+    margin-bottom: 15px
+}
+
+.grpBkgSelectBtn.primaryBtn,.grpBkgSelectBtn:hover {
+    background-color: #008cff;
+    border: 1px solid #008cff;
+    color: #fff;
+    outline: none
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none
+}
+
+#bookbutton-tooltip-v2>.tooltip-inner {
+    background-color: #249995;
+    color: #fff
+}
+
+#bookbutton-tooltip-v2>.arrow:before {
+    display: none
+}
+
+#bookbutton-tooltip-v2>.arrow:after {
+    border-top-color: #249995
+}
+
+.priceInfo {
+    margin-top: 1px
+}
+
+.fli-list .listingCard.selected {
+    background-image: linear-gradient(180deg,#f9fcff,#f9fcff);
+    border: 1px solid rgba(0,140,255,.6)
+}
+
+.card-action-btn {
+    min-width: 120px
+}
+
+.split_combined_lhs {
+    margin-bottom: 120px
+}
+
+.plusDisplayText {
+    width: 15px
+}
+
+.groupBookingCard.split-view .plusDisplayText {
+    width: 20px
+}
+
+.priceSection {
+    align-items: flex-start;
+    display: flex
+}
+
+.clusterContent .airline-info-wrapper,.simpleow .airline-info-wrapper,.split_combinedmc .airline-info-wrapper {
+    width: 170px
+}
+
+.simpleow .priceSection,.split_combinedmc .priceSection {
+    display: flex;
+    justify-content: flex-end
+}
+
+.priceSection.priceLockPersuasionExists {
+    margin-bottom: 20px
+}
+
+.splitViewListing .priceInfo {
+    align-items: center
+}
+
+.offerPriceWrap {
+    margin-bottom: 10px;
+    box-shadow: 0 3px 30px 0 rgba(0,0,0,.1);
+    border-radius: 2px
+}
+
+.offer-price {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    right: 28px
+}
+
+.hide-offer-price {
+    visibility: hidden
+}
+
+html[dir=rtl] .airlineName,html[dir=rtl] .journey-title {
+    text-align: right
+}
+
+html[dir=rtl] .ViewFareBtn {
+    white-space: nowrap
+}
+
+html[dir=rtl] .disc-text,html[dir=rtl] .fromTo,html[dir=rtl] .list-heading,html[dir=rtl] .listingCard,html[dir=rtl] .splitVw,html[dir=rtl] .timeInfoLeft {
+    text-align: right
+}
+
+html[dir=rtl] .timeInfoRight {
+    text-align: left
+}
+
+html[dir=rtl] .plusDisplayText {
+    left: unset
+}
+
+html[dir=rtl] .splitViewListing .plusDisplayText {
+    left: unset;
+    right: unset
+}
+
+html[dir=rtl] .simplert .plusDisplayText {
+    left: unset
+}
+
+html[dir=rtl] .listingTag {
+    right: 10px;
+    left: unset
+}
+
+html[dir=rtl] .simplert .flightTimeSection .flightTimeInfo {
+    text-align: right
+}
+
+.myPartner .bgGradient {
+    background-image: linear-gradient(180deg,#0b1b29 -60%,#554176)
+}
+
+.myPartner .fakeDivHeight10 {
+    background-color: #272947
+}
+
+.myPartner .watermark {
+    width: 390px;
+    height: 120px;
+    position: absolute;
+    right: 0;
+    top: -44px
+}
+
+.myPartner .viewFareRowWrap .watermark {
+    top: 0;
+    height: 68px
+}
+
+.myPartner .listingCard {
+    overflow: hidden
+}
+
+.myPartner .viewFareRowWrap {
+    position: relative;
+    overflow: hidden
+}
+
+.myPartner .whatsapShareDtRt {
+    background: #fafafa;
+    margin: 10px -20px -15px;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center
+}
+
+.myPartner .splitVw .watermark {
+    width: 190px;
+    height: 162px
+}
+
+.myPartner .splitVw .splitviewSticky .watermark {
+    width: 80%;
+    top: 0
+}
+
+.myPartner .partnerExlvTag {
+    background: linear-gradient(39.49deg,#f5515f,#9f0469 109.65%);
+    border-radius: 10px;
+    padding: 2px 8px;
+    color: #fff;
+    font-size: 8px;
+    text-transform: uppercase;
+    font-weight: 700
+}
+
+.myPartner .myPartnertagOuter {
+    margin-top: 5px;
+    padding-right: 35px
+}
+
+.myPartner .getDiscountIcon {
+    width: 26px;
+    height: 19px
+}
+
+.myPartner .burnPersuasion {
+    position: relative;
+    padding: 5px 10px 5px 8px;
+    display: flex;
+    align-items: center;
+    color: #3b385e;
+    font-size: calc(var(--font-scale, 1)*12px);
+    border-radius: 4px;
+    z-index: 1
+}
+
+.myPartner .expiringPersu {
+    background: #ffedd1
+}
+
+.myPartner .rushHourTag {
+    background: linear-gradient(39.49deg,#f2b939,#f19b1b 109.65%);
+    border-radius: 3px;
+    padding: 2px 8px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 10px;
+    position: relative;
+    margin: 5px 12px 0 0;
+    display: inline-block
+}
+
+.myPartner .rushHourTag:before {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #f19b1b;
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 5px
+}
+
+.myBiz .splitVw .splitfare {
+    max-width: 72px
+}
+
+.timingOptionOuter {
+    margin: 0;
+    width: 400px
+}
+
+.timingOption {
+    width: 100%;
+    border: 1px solid transparent;
+    position: relative;
+    padding: 5px 10px
+}
+
+.splitVw .timingOption {
+    width: 280px;
+    padding: 0
+}
+
+.nearByTag {
+    color: #4a4a4a;
+    font-size: 10px;
+    margin-top: 2px
+}
+
+.timingOptionOuter label.not-radio .nearByTag.priceLockPersuasionExists {
+    margin-bottom: -10px
+}
+
+.timeInfoLeft {
+    text-align: left
+}
+
+.timeInfoRight {
+    text-align: right
+}
+
+.stop-info {
+    text-align: center
+}
+
+.flightTimeInfo {
+    color: #000;
+    font-size: calc(var(--font-scale, 1)*18px);
+    font-weight: 900;
+    display: inline-flex
+}
+
+.timingOptionOuter label {
+    margin: 0;
+    width: 100%
+}
+
+.intlRtTimingOption .timingOptionOuter {
+    width: 50%
+}
+
+.intlRtTimingOption>* {
+    margin-right: 15px
+}
+
+.intlRtTimingOption>:last-child {
+    margin: 0!important
+}
+
+.more-options-trigger {
+    padding: 5px 0 10px
+}
+
+html[dir=rtl] .intlRtTimingOption>* {
+    margin-left: 15px;
+    margin-right: unset
+}
+
+.page-loader-wrapper {
+    position: relative;
+    background: #fff;
+    width: 1200px;
+    margin: 20px auto 0;
+    height: 300px;
+    padding-top: 75px
+}
+
+.page-loader-wrapper .lineloader-wrapper .loading-text {
+    font-size: calc(var(--font-scale, 1)*20px)
+}
+
+.lineloader-wrapper {
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+
+.lineLoader {
+    height: 2px;
+    width: 230px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    background-color: #e7e7e7;
+    top: 30%
+}
+
+.lineloader-wrapper .loading-text {
+    font-weight: 700;
+    font-size: calc(var(--font-scale, 1)*16px);
+    color: #4a4a4a;
+    margin-bottom: 20px
+}
+
+.whyNotIntlHead {
+    color: #ffd94e;
+    letter-spacing: 3px
+}
+
+.whyNotIntlsubHead {
+    letter-spacing: .5px
+}
+
+.whyNotIntlBannerbg {
+    width: 100%;
+    min-height: 170px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%
+}
+
+.fliListLdr {
+    width: auto;
+    margin: 0 auto;
+    left: -40px
+}
+
+.couponLoaderBg,.fliListLdr {
+    display: table;
+    position: relative
+}
+
+.couponLoaderBg {
+    background: url(//imgak.mmtcdn.com/flights/assets/media/dt/listing/CouponLoaderBack.png) no-repeat;
+    background-size: 123px 96px;
+    width: 123px;
+    height: 96px;
+    margin: 30px auto 60px
+}
+
+.couponLdrOne {
+    background: url(//imgak.mmtcdn.com/flights/assets/media/dt/listing/CouponLoader2.png) no-repeat;
+    background-size: 70px 48px;
+    z-index: 1;
+    top: 29px;
+    animation: couponOne 2s linear infinite
+}
+
+.couponLdrOne,.couponLdrTwo {
+    width: 70px;
+    height: 48px;
+    display: inline-block;
+    position: absolute;
+    left: 37px
+}
+
+.couponLdrTwo {
+    background: url(//imgak.mmtcdn.com/flights/assets/media/dt/listing/CouponLoader1.png) no-repeat;
+    background-size: 70px 48px;
+    top: 15px;
+    animation: couponTwo 2s linear infinite
+}
+
+@keyframes couponTwo {
+    0% {
+        transform: rotate(-17deg)
+    }
+
+    20% {
+        transform: rotate(20deg)
+    }
+
+    50% {
+        transform: rotate(20deg)
+    }
+
+    65% {
+        transform: rotate(20deg)
+    }
+
+    65% {
+        transform: rotate(-17deg)
+    }
+
+    to {
+        transform: rotate(-17deg)
+    }
+}
+
+@keyframes couponOne {
+    0% {
+        transform: rotate(50deg)
+    }
+
+    20% {
+        transform: rotate(20deg)
+    }
+
+    50% {
+        transform: rotate(20deg)
+    }
+
+    65% {
+        transform: rotate(20deg)
+    }
+
+    65% {
+        transform: rotate(50deg)
+    }
+
+    to {
+        transform: rotate(50deg)
+    }
+}
+
+.greenText {
+    color: #1a7971
+}
+
+.plusSign {
+    margin: 0 9px
+}
+
+.slacedPrice {
+    position: relative
+}
+
+.slacedPrice:before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #d0021a;
+    position: absolute;
+    top: 48%;
+    transform: rotate(170deg)
+}
+
+.allInOneBenefits .slacedPrice {
+    margin-right: 10px;
+    font-weight: 700;
+    color: #4a4a4a
+}
+
+.partnerLogo {
+    width: 150px
+}
+
+.lockPriceTrigger {
+    background: #e9f3ff;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer
+}
+
+.lockPriceTrigger:before {
+    content: "";
+    border-bottom: 7px solid #e9f3ff;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 0;
+    position: absolute;
+    top: -7px;
+    right: 150px
+}
+
+.arrowRightStyle {
+    width: 24px;
+    height: 7px;
+    background-position: 5px;
+    transition: all .5s ease
+}
+
+.lockPriceTrigger:hover .arrowRightStyle {
+    background-position: 10px
+}
+
+.notSlashedFare {
+    margin-top: -25px
+}
+
+.smartValueFares .lpTriggerInfo {
+    display: none
+}
+
+.makeFlex.right{
+    justify-content: flex-end;
+    margin-top: .5rem;
+}
+
+.linkText {
+    all: unset;
+    color: #0091ff;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 1rem;
+}
+
+.makeFlex.spaceBtwCenter {
+    align-items: center;
+    justify-content: space-between
+}
+
+.icon20 {
+    width: 20px;
+    height: 20px
+}
+
+.listingErrorIcon {
+    width: 40px;
+    height: 40px
+}
+
+.bgProperties {
+    background-repeat: no-repeat;
+    background-position: 50%;
+    display: inline-block;
+    background-size: contain
+}
+
+.appendRight10 {
+    margin-right: 10px
+}
+
+.fontSize18 {
+    font-size: calc(var(--font-scale, 1)*18px)
+}
+
+.blackFont {
+    font-weight: 900
+}
+
+.blackText {
+    color: #000
+}
+
+.appendBottom6 {
+    margin-bottom: 6px
+}
+
+.appendBottom12 {
+    margin-bottom: 12px
+}
