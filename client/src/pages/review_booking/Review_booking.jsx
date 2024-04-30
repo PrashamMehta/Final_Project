@@ -13,6 +13,7 @@ import Navbar from "../../components/navbar/Navbar";
 import "./review_booking.css";
 import useFetch from "../../hooks/useFetch";
 import { format } from "date-fns";
+import { AuthContext } from "../../context/AuthContext";
 
 
 
@@ -27,6 +28,7 @@ const ReviewBooking = ({  fare }) => {
   const [email, setEmail] = useState("");
   const [agreeTerms, setAgreeTerms] = useState(false);
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
 
   const {data} = useFetch(`/hotels/find/${hotelId}`);
 
@@ -61,10 +63,14 @@ const ReviewBooking = ({  fare }) => {
   const alldates = getDatesInRange(dates[0].startDate, dates[0].endDate);
 
   const handlePay = () => {
-    // Redirect to payment gateway
-    // Implement payment gateway redirection logic here
-    navigate("/payment"); // Redirecting to payment gateway route for demonstration
+    
+    navigate("/payment"); 
   };
+
+  const handleLogin = () =>{
+    localStorage.setItem('previousPage','/review_booking')
+    navigate("/login1",{state: { dates, options,hotelId,totalFare,selectedRooms}}) 
+  }
 
   return (
     <div className="Review_Booking">
@@ -131,14 +137,15 @@ const ReviewBooking = ({  fare }) => {
                     <input type="email" placeholder="Email" required className="email"></input>
                   </div>      
                 </div>
-                <div className="LoginToAccess">
+                {!user ? 
+                (<div className="LoginToAccess">
                   <div>
                     You need to login in order to fill the details
                   </div>
-                  <button className="LoginButton">
+                  <button className="LoginButton" onClick={handleLogin}>
                     LOGIN
                   </button>
-                </div>
+                </div>):null}
 
                 {/* <div className="GuestsForm">
                   <div className="GuestsFormInput">

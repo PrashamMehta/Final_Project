@@ -9,6 +9,7 @@ import List from "./pages/list/List";
 import Login from "./pages/login/Login";
 import Register from "../src/pages/register/Register"
 import Review_Booking from "../src/pages/review_booking/Review_booking"
+import Login1 from "./pages/login/Login1";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/hotels/:id" element={<Hotel/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/login1" element={<Login1/>}/>
         <Route path="/review_booking" element={<Review_Booking/>}/>
       </Routes>
     </BrowserRouter>
