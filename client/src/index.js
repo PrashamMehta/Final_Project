@@ -7,13 +7,15 @@ import { SearchContextProviderTrain } from "./context/SearchContextTrain";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <AuthContextProvider>
-      <SearchContextProvider>
-        <div style={{ overflowX: 'hidden'}}>
-        <App />
-        </div>
-      </SearchContextProvider>
-    </AuthContextProvider>
-  </React.StrictMode>
+  <div style={{ overflowX: "hidden" }}>
+    <React.StrictMode>
+      <AuthContextProvider>
+        <SearchContextProviderTrain>
+          <SearchContextProvider>
+            <App />
+          </SearchContextProvider>
+        </SearchContextProviderTrain>
+      </AuthContextProvider>
+    </React.StrictMode>
+  </div>
 );

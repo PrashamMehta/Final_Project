@@ -10,6 +10,10 @@ import Login from "./pages/login/Login";
 import Register from "../src/pages/register/Register"
 import Review_Booking from "../src/pages/review_booking/Review_booking"
 import Login1 from "./pages/login/Login1";
+import List1 from "./pages/trainlist/TrainList";
+import Header1 from "./components/header/HeaderTrain";
+import Train from "./pages/train/Train";
+import Flight from "./pages/flight/Flight";
 
 function App() {
   return (
@@ -21,6 +25,10 @@ function App() {
         <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/login1" element={<Login1/>}/>
+        <Route path="/trainlist" element={<List1/>}/>
+        <Route path="/flightlist" element={<List1/>}/>
+        <Route path="/flight" element={<Flight/>}/>
+        <Route path="/train" element={<Train/>}/>
         <Route path="/review_booking" element={<Review_Booking/>}/>
       </Routes>
     </BrowserRouter>

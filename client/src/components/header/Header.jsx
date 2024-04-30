@@ -40,6 +40,13 @@ const Header = ({ type, height1 }) => {
   const { user } = useContext(AuthContext);
   const calendarRef = useRef(null);
 
+  const handleTrain = () =>{
+    navigate("/train")
+  }
+  const handleFlight = () =>{
+    navigate("/flight")
+  }
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (calendarRef.current && !calendarRef.current.contains(event.target)) {
@@ -86,15 +93,15 @@ const Header = ({ type, height1 }) => {
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
+            <span onClick={handleFlight}>Flights</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
+            <span onClick={handleTrain}>Train</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
+            <span>Car</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faTaxi} />

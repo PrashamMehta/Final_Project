@@ -33,3 +33,23 @@ export const getTrainsBetweenStations = async (req, res, next) => {
     next(err);
   }
 };
+
+export const getTicketCategoriesForTrain = async (req, res, next) => {
+  try {
+    const { trainId } = req.params;
+
+    // Find the train by ID
+    const train = await Train.findById(trainId);
+
+    if (!train) {
+      return res.status(404).json({ message: "Train not found" });
+    }
+
+    // Extract TicketCategory data from the train
+    const ticketCategories = train.ticketCategories;
+
+    res.status(200).json(ticketCategories);
+  } catch (err) {
+    next(err);
+  }
+};

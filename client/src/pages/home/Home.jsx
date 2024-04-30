@@ -2,8 +2,6 @@ import Featured from "../../components/featured/Featured";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import TrainDetails from "../../components/TrainDetails/trainDetails";
-import FlightDetails from "../../components/FlightDetails/flightDetails";
 import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
 import PropertyList from "../../components/propertyList/PropertyList";
@@ -20,8 +18,6 @@ const Home = () => {
         <PropertyList/>
         <h1 className="homeTitle">Homes guests love</h1>
         <FeaturedProperties/>
-        <TrainDetails />
-        <FlightDetails />
         <MailList/>
         <Footer/>
       </div>

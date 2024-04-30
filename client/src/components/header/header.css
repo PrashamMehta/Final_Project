@@ -15,6 +15,11 @@
   overflow-y: hidden;
 }
 
+.input-control{
+    input{width: 100%
+    }
+}
+
 .calendarContainer {
   position: absolute;
   top: calc(-100% - 150px);
