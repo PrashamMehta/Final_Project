@@ -188,7 +188,7 @@ const ReviewBooking = ({ fare }) => {
       </div>
       
       
-      <div className="bigcontainer" style={{marginTop: '20rem'}}>
+      {/* <div className="bigcontainer" style={{marginTop: '20rem'}}>
         <div className="vertical1">
           <div className="binformation">
             <div className="header1">
@@ -262,7 +262,7 @@ const ReviewBooking = ({ fare }) => {
             Pay Now
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
