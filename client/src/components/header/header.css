@@ -12,6 +12,15 @@
   position: relative;
   overflow-x: hidden;
   background-color: white !important;
+  overflow-y: hidden;
+}
+
+.calendarContainer {
+  position: absolute;
+  top: calc(-100% - 150px);
+  left: 16rem;
+  z-index: 999;
+  box-shadow: 1px 1px 5px 1px #888888;
 }
 
 .background {

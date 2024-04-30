@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./header.css";
 import { DateRange } from "react-date-range";
-import { useContext, useState } from "react";
+import { useContext, useRef, useState, useEffect } from "react";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
@@ -38,6 +38,20 @@ const Header = ({ type, height1 }) => {
 
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
+  const calendarRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (calendarRef.current && !calendarRef.current.contains(event.target)) {
+        setOpenDate(false);
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   const handleOption = (name, operation) => {
     setOptions((prev) => {
@@ -108,7 +122,7 @@ const Header = ({ type, height1 }) => {
                   onChange={(e) => setDestination(e.target.value)}
                 />
               </div>
-              <div className="headerSearchItem">
+              <div className="headerSearchItem" ref={calendarRef}>
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <span
                   onClick={() => setOpenDate(!openDate)}
@@ -118,14 +132,16 @@ const Header = ({ type, height1 }) => {
                   "MM/dd/yyyy"
                 )}`}</span>
                 {openDate && (
-                  <DateRange
-                    editableDateInputs={true}
-                    onChange={(item) => setDates([item.selection])}
-                    moveRangeOnFirstSelection={false}
-                    ranges={dates}
-                    className="date"
-                    minDate={new Date()}
-                  />
+                  <div className="calendarContainer">
+                    <DateRange
+                      editableDateInputs={true}
+                      onChange={(item) => setDates([item.selection])}
+                      moveRangeOnFirstSelection={false}
+                      ranges={dates}
+                      className="date"
+                      minDate={new Date()}
+                    />
+                  </div>
                 )}
               </div>
               <div className="headerSearchItem">
