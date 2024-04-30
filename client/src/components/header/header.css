@@ -1,12 +1,33 @@
 .header {
-  background-color: #003580;
+  /* background-image: url('https://img.freepik.com/free-photo/back-view-young-woman-looking-ocean_23-2149092762.jpg?t=st=1714472362~exp=1714475962~hmac=30e49f0a64d04a8de380eaaeb6ac66bb193c7011589399fae1328f361b844e2e&w=1060');  */
+  /* background-image: url('https://private-user-images.githubusercontent.com/115364885/326785691-6fa77b8a-c7c6-4a22-bf4e-cb87114563a8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ0NzY3MTgsIm5iZiI6MTcxNDQ3NjQxOCwicGF0aCI6Ii8xMTUzNjQ4ODUvMzI2Nzg1NjkxLTZmYTc3YjhhLWM3YzYtNGEyMi1iZjRlLWNiODcxMTQ1NjNhOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQzMFQxMTI2NThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05ZDBkYzVhNmU5NmMwYzJmZDhiNTRkZTE1YzZjMWExYzAzNjU2OGM4ZjEzNmNiYzJlM2VmODJmMGQ4NmI4MWZiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.ZA6hUh3LsjQjgRrO94s6--aKlkPiH1Rc3xw-zyMiIAc');  */
+  /* background-image: url('https://private-user-images.githubusercontent.com/115364885/326760340-d14df720-edef-47b7-9c56-3e0e196a0ec6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTQ0NzIwMjksIm5iZiI6MTcxNDQ3MTcyOSwicGF0aCI6Ii8xMTUzNjQ4ODUvMzI2NzYwMzQwLWQxNGRmNzIwLWVkZWYtNDdiNy05YzU2LTNlMGUxOTZhMGVjNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNDMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDQzMFQxMDA4NDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04NjU5ZGUwNmM3YjA1NGNiZWE4MGI4ZWUxZWJiOGFmZDZmNjVkNTQ0YjhjZjdmNDRmMzlmY2M0YzdhYjYzNzlhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.m7cBuI33IqgkxJhTVNBDQhfoQfDu-F02ipQgLQL6XDo');  */
+  /* background-size: cover;  */
+  /* background-position: left 52%; */
+  /* background-position: center; */
+  /* background-position: -120%; */
   color: white;
   display: flex;
   justify-content: center;
   position: relative;
+  overflow-x: hidden;
+  background-color: white !important;
+}
+
+.background {
+  height: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  img {
+    width: 100%;
+    filter: brightness(70%);
+  }
 }
 
 .headerContainer {
+  position: absolute;
+  top: 0;
+  z-index: 3;
   width: 100%;
   max-width: 1024px;
   margin: 20px 0px 100px 0px;
@@ -45,6 +66,15 @@
   border: none;
   padding: 10px;
   cursor: pointer;
+  margin-bottom: 4rem;
+}
+.headerBtn2 {
+  background-color: #0071c2;
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .headerSearch {
@@ -60,6 +90,7 @@
   bottom: -25px;
   width: 100%;
   max-width: 1024px;
+  margin-top: 5rem;
 }
 
 .headerIcon {

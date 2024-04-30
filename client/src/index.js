@@ -9,7 +9,9 @@ root.render(
   <React.StrictMode>
     <AuthContextProvider>
       <SearchContextProvider>
+        <div style={{ overflowX: 'hidden'}}>
         <App />
+        </div>
       </SearchContextProvider>
     </AuthContextProvider>
   </React.StrictMode>

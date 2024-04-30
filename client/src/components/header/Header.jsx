@@ -16,6 +16,8 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
+import homeImage from "../../assets/mainbg.png";
+import video1 from "../../assets/video1.mp4";
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -56,6 +58,9 @@ const Header = ({ type }) => {
 
   return (
     <div className="header">
+      <div className="background">
+        <img src={homeImage} alt="" />
+      </div>
       <div
         className={
           type === "list" ? "headerContainer listMode" : "headerContainer"
@@ -198,7 +203,7 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtn" onClick={handleSearch}>
+                <button className="headerBtn2" onClick={handleSearch}>
                   Search
                 </button>
               </div>
